@@ -92,8 +92,9 @@ public class NodeElementProcessor extends EntityElementProcessor implements TagL
 		id = Long.parseLong(attributes.getValue(ATTRIBUTE_NAME_ID));
 		sversion = attributes.getValue(ATTRIBUTE_NAME_VERSION);
 		if (sversion == null) {
-			throw new OsmosisRuntimeException("Node " + id
-					+ " does not have a version attribute as OSM 0.6 are required to have.  Is this a 0.5 file?");
+			version = 1;
+			//throw new OsmosisRuntimeException("Node " + id
+			//		+ " does not have a version attribute as OSM 0.6 are required to have.  Is this a 0.5 file?");
 		} else {
 			version = Integer.parseInt(sversion);
 		}
